@@ -1,0 +1,96 @@
+html,.container-fluid{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: blue;
+}
+.navbar{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-theme{
+    background: white;
+    color: #1D2939;
+    border: 1px solid white;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+}
+.btn-theme:hover{
+    background-color: white !important;
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+.btn-theme-outline{
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+.btn-theme-outline:hover{
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    background: white !important;
+    color: #1D2939;
+}
+
+.dashboard{
+    background-color: black;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.profile{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img{
+    border-radius: 12px;
+    border-end-start-radius: 0px;
+    border-end-end-radius: 0px;
+}
+
+.profile-description{
+    width: 400px;
+    margin: 0 auto;
+    background: white;
+    color: black;
+    padding: 20px;
+    border-end-start-radius: 12px;
+    border-end-end-radius: 12px;
+}
+
+.arrow{
+    margin: 0px 20px;
+    padding: 10px;
+    background: white;
+    color: black;
+    border-radius: 100%;
+}
+
+.arrow:hover{
+    background: black;
+    color: white;
+    border: 2px solid white;
+    margin: 0px 18px;
+}
+
+
+footer{
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+}
+
+footer p{
+    margin: 0;
+    padding: 0;
+}
