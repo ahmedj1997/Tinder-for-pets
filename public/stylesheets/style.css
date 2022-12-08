@@ -1,0 +1,152 @@
+html,.container-fluid{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: blue;
+}
+.navbar{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-theme{
+    background: white;
+    color: #1D2939;
+    border: 1px solid white;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+}
+.btn-theme:hover{
+    background-color: white !important;
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+.btn-theme-outline{
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+.btn-theme-outline:hover{
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    background: white !important;
+    color: #1D2939;
+}
+
+.dashboard{
+    background-color: #FAF7F0;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.profile{
+    color: white;
+    justify-content: center;
+    border: 1px solid rgb(186, 186, 186);
+    border-radius: 12px;
+    width: 400px;
+    margin: auto;
+}
+
+.profile-img{
+    border-radius: 8px;
+    border-end-start-radius: 0px;
+    border-end-end-radius: 0px;
+    height: 450px;
+}
+
+.profile-description{
+    text-align: start;
+    margin: 0 auto;
+    background: white;
+    color: black;
+    padding: 20px;
+    border-end-start-radius: 12px;
+    border-end-end-radius: 12px;
+}
+
+.arrow{
+    margin: 0px 20px;
+    padding: 10px;
+    background: white;
+    color: black;
+    border-radius: 100%;
+}
+
+.arrow-accept{
+    background: rgb(12, 195, 12);   
+}
+
+.arrow-accept:hover{
+    background: rgb(0, 253, 0);   
+    color: white;
+    border: 2px solid white;
+    margin: 0px 18px;
+}
+
+.arrow-deny{
+    background: rgb(255, 39, 39);
+}
+
+.arrow-deny:hover{
+    background: rgb(254, 10, 10);
+    color: white;
+    border: 2px solid white;
+    margin: 0px 18px;
+}
+
+.profile-actions{
+    display: flex;
+    justify-content:space-around;
+}
+
+.action-icon{
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.location-icon{
+    color: darkgrey;
+}
+
+.profile-location{  
+    color: darkgrey;
+    margin-left: 5px;
+}
+
+.action-icon-heart{
+    background: #416788;
+}
+
+.action-icon-approve{
+    background: #24b822;
+}
+
+.action-icon-deny{
+    background: #FF1B1C;
+}
+
+.pagination{
+    padding: 20px 0px;
+    margin: 0;
+}
+
+footer{
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+}
+
+footer p{
+    margin: 0;
+    padding: 0;
+}
