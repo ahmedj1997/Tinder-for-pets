@@ -7,6 +7,10 @@ html,.container-fluid{
 header{
     background-color: blue;
 }
+
+section{
+    margin-bottom: 80px;
+}
 .navbar{
     width: 75%;
     margin: 0 auto;
@@ -42,7 +46,7 @@ header{
 }
 
 .dashboard{
-    background-color: #FAF7F0;
+    background-color: white;
     text-align: center;
     padding-top: 30px;
 }
@@ -150,3 +154,73 @@ footer p{
     margin: 0;
     padding: 0;
 }
+
+/* Home CSS */
+
+.hero{
+    background-image: url('../images/hero-bg.png');
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+    background-size: cover;
+}
+
+.hero-content{
+    padding: 15% 0;
+    width: 70%;
+}
+
+.btn-signup{
+    padding: 10px 80px;
+    border-radius: 0px;
+}
+
+.btn-signup:hover{
+    background-color: white !important;
+    color:#1c2540 !important;
+    border: 1px solid white !important;
+}
+
+.scores{
+}
+
+.score h3{
+    color: white;
+}
+
+.score{
+    background: #1c2540;
+    color: white;
+    border-radius: 12px;
+    padding: 25px 0;
+}
+.score h1{
+    /*font-size: 5rem;
+    line-height: 5rem;*/
+    color: white;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon,.carousel-control-next:hover, .carousel-control-next-icon:hover, .carousel-control-prev:hover , .carousel-control-next:active, .carousel-control-prev:active {
+    color:#1c2540;
+}
+
+.carousel-control-next:focus{
+    color:#1c2540;
+}
+
+
+.testimonial-profile{
+    width: 30%;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.testimonial-review{
+    width: 30%;
+    margin: auto;
+}
+
+.rating{
+    padding: 10px 0;
+    color: orange;
+}
+
