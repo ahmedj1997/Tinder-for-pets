@@ -149,10 +149,36 @@ footer{
     text-align: center;
     padding: 25px 0;
 }
-
 footer p{
     margin: 0;
     padding: 0;
+}
+
+footer a{
+    color: white;
+}
+
+footer a:hover{
+    color: rgb(170, 168, 168);
+}
+
+footer ul{
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons > i{
+    padding-right: 10px;
+}
+
+.footer-section-title{
+    margin-bottom: 10px;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Home CSS */
@@ -182,6 +208,7 @@ footer p{
 
 .section-heading{
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .score h3{
