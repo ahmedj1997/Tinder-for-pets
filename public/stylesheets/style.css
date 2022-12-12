@@ -8,7 +8,7 @@ body, p, h1,h2,h3,h4,h5{
     font-family: 'Open Sans', sans-serif;
 }
 header{
-    background-color: #3498db;
+    background-color: #d0f9ff;
 }
 section{
     margin-bottom: 80px;
@@ -20,31 +20,40 @@ section{
     justify-content: space-between;
 }
 
+.navbar-brand .display-4{
+    color: #1D2939 !important;
+    margin: 0;
+    padding: 0;
+}
+
+.btn{
+    border-radius: 50px;
+}
+
 .btn-theme{
-    background: white;
-    color: #1D2939;
+    padding: 10px 20px;
+    background: #1a5073;
+    color: white;
     border: 1px solid white;
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-    border-radius: 8px;
+    border: 2px solid #1a5073;
 }
+
 .btn-theme:hover{
-    background-color: white !important;
-    color: white;
-    border: 1px solid white;
-    border-radius: 8px;
+    background-color: #103147 !important;
+    color: white !important;
 }
+
 .btn-theme-outline{
-    color: white;
-    border: 1px solid white;
-    border-radius: 8px;
+    background: white;
+    color: #1D2939;
+    border: 2px solid transparent;
 }
 
 .btn-theme-outline:hover{
-    color: white;
-    border: 1px solid white;
-    border-radius: 8px;
-    background: white !important;
-    color: #1D2939;
+    background: #f1f1f1 !important;
+    border: 2px solid white;
+    color: #1D2939 !important;
 }
 
 .dashboard{
@@ -198,10 +207,13 @@ footer ul{
     width: 70%;
 }
 
+.hero-content .display-1{
+    margin-left: -4px;
+}
+
 .btn-signup{
     background-color: #1a5073;
     padding: 10px 80px;
-    border-radius: 0px;
 }
 
 .btn-signup:hover{
