@@ -1,13 +1,15 @@
+
 html,.container-fluid{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-header{
-    background-color: blue;
+body, p, h1,h2,h3,h4,h5{
+    font-family: 'Open Sans', sans-serif;
 }
-
+header{
+    background-color: #3498db;
+}
 section{
     margin-bottom: 80px;
 }
@@ -148,6 +150,7 @@ footer{
     color: white;
     text-align: center;
     padding: 25px 0;
+    background-color: #3498db;
 }
 footer p{
     margin: 0;
@@ -196,14 +199,15 @@ footer ul{
 }
 
 .btn-signup{
+    background-color: #1a5073;
     padding: 10px 80px;
     border-radius: 0px;
 }
 
 .btn-signup:hover{
-    background-color: white !important;
-    color:#1c2540 !important;
-    border: 1px solid white !important;
+    background-color: #3498db !important;
+    color:white !important;
+    border: 1px solid #3498db !important;
 }
 
 .section-heading{
@@ -216,7 +220,7 @@ footer ul{
 }
 
 .score{
-    background: #1c2540;
+    background: #2980b9;
     color: white;
     border-radius: 12px;
     padding: 25px 0;
@@ -234,7 +238,6 @@ footer ul{
 .carousel-control-next:focus{
     color:#1c2540;
 }
-
 
 .testimonial-profile{
     width: 30%;
