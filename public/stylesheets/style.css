@@ -193,7 +193,7 @@ footer ul{
     align-items: center;
 }
 
-/* Home CSS */
+/* Index CSS */
 
 .hero{
     background-image: url('../images/hero-bg.png');
@@ -267,3 +267,129 @@ footer ul{
     color: orange;
 }
 
+
+/* Home */
+
+.home-page{
+    background-color: rgb(241, 241, 241);
+}
+
+.home-header{
+    display: flex;
+    height: 10vh;
+    background: white;
+}
+.user-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-box{
+    width: 50%;
+    position: relative;
+}
+.search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(50%,-50%);
+    min-width: 40px;
+    margin-left: -5px
+}
+
+.search-input{
+    width: 100%;
+    text-align: center;
+}
+
+.user-settings{
+    display: flex;
+    align-items: center;
+}
+.user-settings-icon{
+    font-size: 28px;
+}
+
+.profile-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin: 10px;
+}
+
+.box-section{
+    min-height: 500px;
+    background: white;
+    border-radius: 15px;
+}
+
+.box-section-activity{
+    border-radius: 15px;
+}
+
+.section-title{
+    font-weight: 700;
+}
+.section-title-link{
+    font-weight: 700;
+}
+
+.acitivity-list{
+    align-items: center;
+}
+.activity-item{
+    align-items: center;
+}
+.activity-item-username{
+    font-weight: 700;
+}
+.activity-profile-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin: 10px;
+    margin-left: 0;
+}
+.activity-item p{
+    font-size: 13px !important;
+    margin: 0;
+}
+.activity-item-time-ago{
+    font-weight: 400;
+    color: rgb(139, 139, 139);
+}
+.timeline-list{
+    overflow:auto;
+    height: 85vh;
+}
+.timeline-item{
+    background: white;
+    border-radius: 15px;
+}
+.timeline-item-header{
+    display:flex;
+    align-items: center;
+}
+.timeline-header{
+    text-align: left;
+}
+.timeline-profile-icon{
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    margin: 10px;
+}
+.timeline-profile-username{
+    font-weight: 700;
+}
+.timeline-profile-location{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(139, 139, 139);
+}
+.timeline-post-img{
+    border-radius: 8px;
+}
+.timeline-item p{
+    margin: 0;
+}

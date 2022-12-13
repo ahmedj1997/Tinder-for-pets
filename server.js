@@ -1,10 +1,15 @@
 const { urlencoded } = require('express');
+//var expressLayouts = require('express-ejs-layouts');
+
+
 const express = require('express');
 const app = express();
 
 const port = 4000;
 
+app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+
 express.urlencoded({extended: true});
 
 app.get('/',function(req,res){
