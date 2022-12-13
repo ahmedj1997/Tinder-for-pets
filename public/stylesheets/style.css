@@ -314,7 +314,7 @@ footer ul{
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    margin: 10px;
+    margin: 5px;
 }
 
 .box-section{
@@ -337,22 +337,27 @@ footer ul{
 .acitivity-list{
     align-items: center;
 }
-.activity-item{
+.activity-item, .suggestion-item{
     align-items: center;
 }
-.activity-item-username{
+.activity-item-username, .suggestion-item-username{
     font-weight: 700;
 }
-.activity-profile-icon{
+.activity-profile-icon, .suggestion-profile-icon{
     width: 40px;
     height: 40px;
     border-radius: 100%;
     margin: 10px;
     margin-left: 0;
 }
-.activity-item p{
+.activity-item p, .suggestion-item p{
     font-size: 13px !important;
     margin: 0;
+}
+.suggestion-item-user-description{
+    font-weight: 600;
+    font-size: 13px;
+    color: rgb(139, 139, 139);
 }
 .activity-item-time-ago{
     font-weight: 400;
@@ -392,4 +397,24 @@ footer ul{
 }
 .timeline-item p{
     margin: 0;
+}
+.user-settings-icon {
+    margin: 5px;
+}
+.footer ul li{
+    padding: 5px;
+    padding-left: 0px;
+}
+
+.footer ul li a{
+    font-size: 13px;
+    font-weight: 300;
+    text-decoration: underline;
+    color: rgb(139, 139, 139);
+}
+
+.footer p{
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(139, 139, 139);
 }
