@@ -318,7 +318,7 @@ footer ul{
 }
 
 .box-section{
-    min-height: 500px;
+   /* min-height: 500px;*/
     background: white;
     border-radius: 15px;
 }
