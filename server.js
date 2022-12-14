@@ -24,6 +24,9 @@ app.get('/home', function(req,res){
     res.render('../views/home.ejs');
 })
 
+app.get('/settings', function(req,res){
+    res.render('../views/settings.ejs');
+})
 app.listen(port, function(){
     console.log(`Listneing on ${port}`);
 });

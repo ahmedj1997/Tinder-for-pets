@@ -307,18 +307,88 @@ footer ul{
     align-items: center;
 }
 .user-settings-icon{
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .profile-icon{
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     border-radius: 100%;
     margin: 5px;
 }
 
+.profile-icon:hover{
+    transform: scale(1.5);
+    -webkit-animation: animateProfile 0.5s forwards;
+    -webkit-transition: transform 1s ease-in-out;
+}
+
+@-webkit-keyframes animateProfile {
+    from {margin-left: 0px;}
+    to {margin-left: 10px;}
+}
+
+.notification-box{
+    position: relative;
+}
+.notification-alert{
+    padding: 3px;
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    font-size: 8px;
+    line-height: 8px;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+}
+.notification-item{
+    display: flex;
+    align-items: center;
+}
+.notification-info{
+    margin-left: 10px;
+    flex-grow: 1;
+}
+.notification-info a{
+    flex-grow: 2; 
+    text-align: center;
+}
+.notification-title{
+    font-size: 16px;
+}
+.notification-description{
+    font-size: 14px;
+}
+.notification-mark-all-read{
+    font-size: 14px;
+    font-weight: 800;
+}
+.notification-mark-btn{
+    font-size: 14px;
+    font-weight: 300;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: -50px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 .box-section{
-   /* min-height: 500px;*/
+   /* min-height: 500px;*/  
     background: white;
     border-radius: 15px;
 }
@@ -401,6 +471,7 @@ footer ul{
 .user-settings-icon {
     margin: 5px;
 }
+
 .footer ul li{
     padding: 5px;
     padding-left: 0px;
@@ -417,4 +488,58 @@ footer ul{
     font-size: 14px;
     font-weight: 500;
     color: rgb(139, 139, 139);
+}
+
+/* Settings Page */
+
+.settings-box i{
+    font-size: 20px;
+}
+.settings-option{
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Profile Page */
+
+
+.profile-page{
+}
+
+.profile-page-header{
+    background: rgb(42, 166, 255);
+    height: 200px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.profile-page-body{
+    background: white;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.profile-page-img{
+    position: relative;
+    margin-top: -125px;
+    z-index: 200;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.profile-page-name{
+    font-size: 16px;
+}
+.profile-page-location{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(139, 139, 139);
+}
+.profile-page-location i{
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+.profile-page-description{
+
 }

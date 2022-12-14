@@ -39,7 +39,7 @@
   <body>
     <header class="home-header">
       <div class="container user-nav">
-        <h1 class="display-4 m-0">PETINDER</h1>
+        <a href="/home"><h1 class="display-4 m-0">PETINDER</h1></a>
         <div class="search-box">
           <i class="search-icon fa-solid fa-magnifying-glass"></i>
           <input
@@ -51,9 +51,49 @@
             placeholder="Search for cats..."
           />
         </div>
+
         <div class="user-settings">
-          <a href=""><i class="user-settings-icon notification-icon fa-solid fa-bell"></i></a>
-          <a href=""><i class="user-settings-icon settings-icon fa-solid fa-gear"></i></a>
+          <div class="dropdown">
+            <div class="notification-box">
+              <a href="#"
+                ><i
+                  class="user-settings-icon notification-icon fa-solid fa-bell dropbtn"
+                ></i
+              ></a>
+              <span class="notification-alert">5</span>
+            </div>
+            <div class="dropdown-content p-4">
+              <div class="d-flex justify-content-between">
+                <p class="section-title">Notifications</p>
+                <p>
+                  <a class="notification-mark-all-read">Mark all as read</a>
+                </p>
+              </div>
+
+              <% for(let i = 0; i < 5; i++){ %> <% let max = 5 %>
+              <div class="notification-item">
+                <img class="profile-icon" src="/images/profile.png" />
+                <div class="notification-info d-flex align-items-center">
+                  <div>
+                    <h5 class="notification-title m-0">catmaster12</h5>
+                    <span class="notification-description"
+                      >has just followed you</span
+                    >
+                  </div>
+
+                  <a href="#"><i class="notification-mark-btn fa-solid fa-x"></i></a>
+                </div>
+              </div>
+              <% if(i < max - 1 ){ %>
+              <hr />
+              <%}%> <%}%>
+            </div>
+          </div>
+          <a href="/settings"
+            ><i
+              class="user-settings-icon notification-icon fa-solid fa-gear"
+            ></i
+          ></a>
           <img class="profile-icon" src="/images/profile.png" />
         </div>
       </div>
@@ -115,18 +155,19 @@
               </div>
             </div>
             <div class="footer p-2">
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Privacy</a></li>
-                </ul>
-                <p>Petinder &copy; 2022</p>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+              <p>Petinder &copy; 2022</p>
             </div>
           </div>
           <div class="col-6">
             <div class="box-section-activity text-center">
               <div class="timeline-list">
+                <% for(let i = 0; i < 5; i++) {%>
                 <div class="timeline-item p-2 mb-3">
                   <div class="timeline-item-header">
                     <img
@@ -134,7 +175,7 @@
                       src="/images/profile.png"
                     />
                     <div class="timeline-header">
-                      <p class="timeline-profile-username">catmaster21</p>
+                      <a href="/profile"><p class="timeline-profile-username">catmaster21</p></a>
                       <p class="timeline-profile-location">Manama, Bahrain</p>
                     </div>
                   </div>
@@ -143,87 +184,13 @@
                     class="timeline-post-img"
                     src="https://thiscatdoesnotexist.com/"
                   />
-                </div>
-                <div class="timeline-item p-2 mb-3">
-                  <div class="timeline-item-header">
-                    <img
-                      class="timeline-profile-icon"
-                      src="/images/profile.png"
-                    />
-                    <div class="timeline-header">
-                      <p class="timeline-profile-username">catmaster21</p>
-                      <p class="timeline-profile-location">Manama, Bahrain</p>
-                    </div>
+                  <div class="profile-actions my-3">
+                    <a href="#"><i class="fa-solid fa-heart fa-2x"></i></a>
+                    <a href="#"><i class="fa-solid fa-star fa-2x"></i></a>
+                    <a href="#"><i class="fa-solid fa-2x">X</i></a>
                   </div>
-                  <img
-                    class="timeline-post-img"
-                    src="https://thiscatdoesnotexist.com/"
-                  />
                 </div>
-                <div class="timeline-item p-2 mb-3">
-                  <div class="timeline-item-header">
-                    <img
-                      class="timeline-profile-icon"
-                      src="/images/profile.png"
-                    />
-                    <div class="timeline-header">
-                      <p class="timeline-profile-username">catmaster21</p>
-                      <p class="timeline-profile-location">Manama, Bahrain</p>
-                    </div>
-                  </div>
-                  <img
-                    class="timeline-post-img"
-                    src="https://thiscatdoesnotexist.com/"
-                  />
-                </div>
-                <div class="timeline-item p-2 mb-3">
-                  <div class="timeline-item-header">
-                    <img
-                      class="timeline-profile-icon"
-                      src="/images/profile.png"
-                    />
-                    <div class="timeline-header">
-                      <p class="timeline-profile-username">catmaster21</p>
-                      <p class="timeline-profile-location">Manama, Bahrain</p>
-                    </div>
-                  </div>
-                  <img
-                    class="timeline-post-img"
-                    src="https://thiscatdoesnotexist.com/"
-                  />
-                </div>
-                <div class="timeline-item p-2 mb-3">
-                  <div class="timeline-item-header">
-                    <img
-                      class="timeline-profile-icon"
-                      src="/images/profile.png"
-                    />
-                    <div class="timeline-header">
-                      <p class="timeline-profile-username">catmaster21</p>
-                      <p class="timeline-profile-location">Manama, Bahrain</p>
-                    </div>
-                  </div>
-                  <img
-                    class="timeline-post-img"
-                    src="https://thiscatdoesnotexist.com/"
-                  />
-                </div>
-                <div class="timeline-item p-2 mb-3">
-                  <div class="timeline-item-header">
-                    <img
-                      class="timeline-profile-icon"
-                      src="/images/profile.png"
-                    />
-                    <div class="timeline-header">
-                      <p class="timeline-profile-username">catmaster21</p>
-                      <p class="timeline-profile-location">Manama, Bahrain</p>
-                    </div>
-                  </div>
-                  <img
-                    class="timeline-post-img"
-                    src="https://thiscatdoesnotexist.com/"
-                  />
-                </div>
+                <%}%>
               </div>
             </div>
           </div>
@@ -240,9 +207,11 @@
                     src="/images/profile.png"
                   />
                   <div>
-                  <p class="suggestion-item-username">catmaster21</p>
-                  <span class="suggestion-item-user-description">Followed by max12</span>
-                </div>
+                    <p class="suggestion-item-username">catmaster21</p>
+                    <span class="suggestion-item-user-description"
+                      >Followed by max12</span
+                    >
+                  </div>
                 </div>
                 <div class="suggestion-item d-flex">
                   <img
@@ -251,39 +220,47 @@
                   />
                   <div>
                     <p class="suggestion-item-username">catmaster21</p>
-                    <span class="suggestion-item-user-description">Followed by max12</span>
+                    <span class="suggestion-item-user-description"
+                      >Followed by max12</span
+                    >
                   </div>
                 </div>
                 <div class="suggestion-item d-flex">
-                    <img
-                      class="suggestion-profile-icon"
-                      src="/images/profile.png"
-                    />
-                    <div>
-                      <p class="suggestion-item-username">catmaster21</p>
-                      <span class="suggestion-item-user-description">Followed by max12</span>
-                    </div>
+                  <img
+                    class="suggestion-profile-icon"
+                    src="/images/profile.png"
+                  />
+                  <div>
+                    <p class="suggestion-item-username">catmaster21</p>
+                    <span class="suggestion-item-user-description"
+                      >Followed by max12</span
+                    >
                   </div>
-                  <div class="suggestion-item d-flex">
-                    <img
-                      class="suggestion-profile-icon"
-                      src="/images/profile.png"
-                    />
-                    <div>
-                      <p class="suggestion-item-username">catmaster21</p>
-                      <span class="suggestion-item-user-description">Followed by max12</span>
-                    </div>
+                </div>
+                <div class="suggestion-item d-flex">
+                  <img
+                    class="suggestion-profile-icon"
+                    src="/images/profile.png"
+                  />
+                  <div>
+                    <p class="suggestion-item-username">catmaster21</p>
+                    <span class="suggestion-item-user-description"
+                      >Followed by max12</span
+                    >
                   </div>
-                  <div class="suggestion-item d-flex">
-                    <img
-                      class="suggestion-profile-icon"
-                      src="/images/profile.png"
-                    />
-                    <div>
-                      <p class="suggestion-item-username">catmaster21</p>
-                      <span class="suggestion-item-user-description">Followed by max12</span>
-                    </div>
+                </div>
+                <div class="suggestion-item d-flex">
+                  <img
+                    class="suggestion-profile-icon"
+                    src="/images/profile.png"
+                  />
+                  <div>
+                    <p class="suggestion-item-username">catmaster21</p>
+                    <span class="suggestion-item-user-description"
+                      >Followed by max12</span
+                    >
                   </div>
+                </div>
               </div>
             </div>
           </div>
@@ -297,6 +274,29 @@
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      /* When the user clicks on the button, 
+      toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+        console.log("clicked");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
