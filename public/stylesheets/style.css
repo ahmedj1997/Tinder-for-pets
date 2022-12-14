@@ -6,7 +6,6 @@ html,.container-fluid{
 }
 body, p, h1,h2,h3,h4,h5{
     font-family: 'Open Sans', sans-serif;
-    background: red;
 }
 header{
     background-color: #d0f9ff;
