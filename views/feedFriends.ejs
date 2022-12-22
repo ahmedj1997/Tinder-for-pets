@@ -7,7 +7,70 @@
     }
   </style>
 </head>
-<%- include('./components/includes/navbar.ejs')%>
+<header class="home-header">
+  <div class="container user-nav">
+    <a href="/home"><h1 class="display-4 m-0">PETINDER</h1></a>
+    <div class="search-box">
+      <i class="search-icon fa-solid fa-magnifying-glass"></i>
+      <input
+        type="text"
+        class="form-control search-input"
+        name=""
+        id=""
+        aria-describedby="helpId"
+        placeholder="Search for cats..."
+      />
+    </div>
+
+    <div class="user-settings">
+      <div class="dropdown">
+        <div class="notification-box">
+          <a href="#"
+            ><i
+              class="user-settings-icon notification-icon fa-solid fa-bell dropbtn"
+            ></i
+          ></a>
+          <span class="notification-alert">5</span>
+        </div>
+        <div class="dropdown-content p-4">
+          <div class="d-flex justify-content-between">
+            <p class="section-title">Notifications</p>
+            <p>
+              <a class="notification-mark-all-read">Mark all as read</a>
+            </p>
+          </div>
+
+          <% for(let i = 0; i < 5; i++){ %> <% let max = 5 %>
+          <div class="notification-item">
+            <img
+              class="profile-icon"
+              src="/images/uploaded/profile/default.png"
+            />
+            <div class="notification-info d-flex align-items-center">
+              <div>
+                <h5 class="notification-title m-0">catmaster12</h5>
+                <span class="notification-description"
+                  >has just followed you</span
+                >
+              </div>
+
+              <a href="#"
+                ><i class="notification-mark-btn fa-solid fa-x"></i
+              ></a>
+            </div>
+          </div>
+          <% if(i < max - 1 ){ %>
+          <hr />
+          <%}%> <%}%>
+        </div>
+      </div>
+      <a href="/settings"
+        ><i class="user-settings-icon notification-icon fa-solid fa-gear"></i
+      ></a>
+      <img class="profile-icon" src="/images/uploaded/profile/default.png" />
+    </div>
+  </div>
+</header>
 <main class="home-page">
   <div class="container my-5">
     <div class="row">

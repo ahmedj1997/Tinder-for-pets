@@ -1,0 +1,45 @@
+<%- include('./components/includes/navbar.ejs')%>
+    <main class="home-page">
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-3">
+            <div class="box-section p-4">
+                <%- include('./components/settings/menu.ejs') %>
+            </div>
+            <div class="footer p-2">
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+              <p>Petinder &copy; 2022</p>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="box-section p-4">
+              <h5>Friends</h5>
+              <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">User</th>
+                            <th scope="col">Manage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% friends.forEach(friend =>{%>
+                            <tr>
+                                <td scope="row"><%= friend %></td>
+                                <td><a href="/profile/<%= friend %>">View Profile</a></td>
+                            </tr>
+                        <%})%>
+                    </tbody>
+                </table>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>

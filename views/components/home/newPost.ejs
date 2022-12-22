@@ -1,0 +1,22 @@
+<div class="box-section new-post-box mb-3">
+  <form method="post" action="/newpost" enctype="multipart/form-data">
+    <div class="p-3 pb-0">
+      <input
+        name="postContent"
+        class="new-post-input form-control"
+        placeholder="Compose a new post"
+      />
+        <input type="file" class="form-control" name="postImage" id="" placeholder="" aria-describedby="fileHelpId">
+    </div>
+    <hr class="w-100" />
+    <div class="d-flex justify-content-between align-items-center px-4 pb-3">
+      <a href="#">
+        <div class="d-flex align-items-center">
+          <i class="fa-solid fa-image me-2"></i>
+          <span><strong>Add Photo</strong></span>
+        </div>
+      </a>
+      <button type="submit" class="btn px-4 btn-primary">Post</button>
+    </div>
+  </form>
+</div>

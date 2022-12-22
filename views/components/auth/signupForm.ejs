@@ -1,0 +1,94 @@
+<form method="post" action="/signup">
+  <div
+    class="modal fade"
+    id="signupModel"
+    tabindex="-1"
+    aria-labelledby="signupModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Sign up</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <div class="row">
+              <div class="col-6">
+                <label class="form-label">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="userName"
+                  id=""
+                  aria-describedby="helpId"
+                  placeholder="johndoe123"
+                />
+              </div>
+             <div class="col-6">
+              <label class="form-label">Pet name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="petName"
+                id=""
+                aria-describedby="helpId"
+                placeholder="Fluffy"
+              />
+             </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-6">
+                <label class="form-label">Password</label>
+                <input
+                  type="passsword"
+                  class="form-control"
+                  name="password"
+                  id=""
+                  aria-describedby="helpId"
+                  placeholder="**********"
+                />
+              </div>
+              <div class="col-6">
+                <label class="form-label">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="emailAddress"
+                  id=""
+                  aria-describedby="helpId"
+                  placeholder="example@email.com"
+                />
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-6">
+                <label class="form-label">Country</label>
+                <select class="form-control" name="country">
+                  <option selected>Select Country</option>
+                  <option value="Bahrain">Bahrain</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label class="form-label">City</label>
+                <select class="form-control" name="city">
+                  <option selected>Select City</option>
+                  <option value="Manama">Manama</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input class="btn btn-primary w-100" type="submit" value="Sign Up" />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,124 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Petinder - Home</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link href="/stylesheets/pixel.css" rel="stylesheet" />
-    <link href="/stylesheets/style.css" rel="stylesheet" />
-    <style>
-      html {
-        overflow: hidden;
-        height: 100%;
-      }
-    </style>
-  </head>
-
-  <body>
-    <header class="home-header">
-      <div class="container user-nav">
-        <h1 class="display-4 m-0">PETINDER</h1>
-        <div class="search-box">
-          <i class="search-icon fa-solid fa-magnifying-glass"></i>
-          <input
-            type="text"
-            class="form-control search-input"
-            name=""
-            id=""
-            aria-describedby="helpId"
-            placeholder="Search for cats..."
-          />
-        </div>
-
-        <div class="user-settings">
-          <div class="dropdown">
-            <div class="notification-box">
-              <a href="#"
-                ><i
-                  class="user-settings-icon notification-icon fa-solid fa-bell dropbtn"
-                ></i
-              ></a>
-              <span class="notification-alert">5</span>
-            </div>
-            <div class="dropdown-content p-4">
-              <div class="d-flex justify-content-between">
-                <p class="section-title">Notifications</p>
-                <p>
-                  <a class="notification-mark-all-read">Mark all as read</a>
-                </p>
-              </div>
-
-              <% for(let i = 0; i < 5; i++){ %> <% let max = 5 %>
-              <div class="notification-item">
-                <img class="profile-icon" src="/images/profile.png" />
-                <div class="notification-info d-flex align-items-center">
-                  <div>
-                    <h5 class="notification-title m-0">catmaster12</h5>
-                    <span class="notification-description"
-                      >has just followed you</span
-                    >
-                  </div>
-
-                  <a href="#"
-                    ><i class="notification-mark-btn fa-solid fa-x"></i
-                  ></a>
-                </div>
-              </div>
-              <% if(i < max - 1 ){ %>
-              <hr />
-              <%}%> <%}%>
-            </div>
-          </div>
-          <a href="#"
-            ><i
-              class="user-settings-icon notification-icon fa-solid fa-gear"
-            ></i
-          ></a>
-          <img class="profile-icon" src="/images/profile.png" />
-        </div>
-      </div>
-    </header>
+<%- include('./components/includes/navbar.ejs')%>
     <main class="home-page">
       <div class="container my-5">
         <div class="row">
           <div class="col-3">
             <div class="box-section p-4">
-              <p class="section-title">Settings</p>
-              <hr />
-              <div class="settings-box d-flex align-items-center p-3">
-                <i class="fa-solid fa-user fa-2x"></i>
-                <p class="settings-option m-0 ms-3">Account Info</p>
-              </div>
-              <div class="settings-box d-flex align-items-center p-3">
-                <i class="fa-solid fa-user fa-2x"></i>
-                <p class="settings-option m-0 ms-3">Friends</p>
-              </div>
-              <div class="settings-box d-flex align-items-center p-3">
-                <i class="fa-solid fa-right-from-bracket fa-2x"></i>
-                <p class="settings-option m-0 ms-3">Log Out</p>
-              </div>
+             <%- include('./components/settings/menu.ejs') %>
             </div>
             <div class="footer p-2">
               <ul>
@@ -132,52 +19,96 @@
           </div>
           <div class="col-9">
             <div class="box-section p-4">
+              <h5>Display Photo</h5>
+              <form
+                method="post"
+                action="/profileimg/update?_method=PATCH"
+                enctype="multipart/form-data"
+              >
+                <div class="row my-3 p-2">
+                  <div class="col-6">
+                    <img class="settings-profile-img"
+                      src="/images/uploaded/profile/<%= user.profileImage %>"
+                    />
+                    <input
+                      type="file"
+                      class="form-control"
+                      name="profileImage"
+                    />
+                    <input
+                      type="hidden"
+                      name="userId"
+                      value="<%= user._id %>"
+                    />
+                    <button class="mt-3 btn btn-primary w-100" type="submit">
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <form method="post" action="/settings/update?_method=PATCH">
                 <h5>Profile</h5>
-                <hr>
+                <div class="row my-3 p-2">
+                  <div class="col-6">
+                    <label for="" class="form-label">Username</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="userName"
+                      id=""
+                      aria-describedby="emailHelpId"
+                      value="<%= user.userName %>"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <label for="" class="form-label">Pet Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="petName"
+                      id=""
+                      aria-describedby="emailHelpId"
+                      value="<%= user.petName %>"
+                    />
+                  </div>
+                </div>
+                <h5>Location</h5>
+                <div class="row my-3 p-2">
+                  <div class="col-6">
+                    <div class="mb-0">
+                      <label for="" class="form-label">Country</label>
+                      <select class="form-select" name="country" id="">
+                        <option selected><%= user.country %></option>
+                        <option value="Bahrain">Bahrain</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-0">
+                      <label for="" class="form-label">City</label>
+                      <select class="form-select" name="city" id="">
+                        <option selected><%= user.city %></option>
+                        <option value="Bahrain">Manama</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <h5>Change Password</h5>
+                <div class="row mt-3 p-2">
+                  <div class="col-6">
+                    <label for="" class="form-label">Password</label>
+                    <input
+                      name="password"
+                      type="password"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+                <hr />
+                <button class="btn btn-primary btn-lg w-100" type="Submit">Update Info</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </main>
-
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-
-    <script>
-      /* When the user clicks on the button, 
-      toggle between hiding and showing the dropdown content */
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-        console.log("clicked");
-      }
-
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function (event) {
-        if (!event.target.matches(".dropbtn")) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
-            }
-          }
-        }
-      };
-    </script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/7ea3e6daeb.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
