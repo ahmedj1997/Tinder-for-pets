@@ -79,7 +79,6 @@
                       <label for="" class="form-label">Country</label>
                       <select class="form-select" name="country" id="">
                         <option selected><%= user.country %></option>
-                        <option value="Bahrain">Bahrain</option>
                       </select>
                     </div>
                   </div>
@@ -88,7 +87,6 @@
                       <label for="" class="form-label">City</label>
                       <select class="form-select" name="city" id="">
                         <option selected><%= user.city %></option>
-                        <option value="Bahrain">Manama</option>
                       </select>
                     </div>
                   </div>
@@ -99,6 +97,14 @@
                     <label for="" class="form-label">Password</label>
                     <input
                       name="password"
+                      type="password"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <label for="" class="form-label">Password</label>
+                    <input
+                      name="passwordRepeat"
                       type="password"
                       class="form-control"
                     />

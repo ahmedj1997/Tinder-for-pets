@@ -3,7 +3,6 @@ module.exports = function isLoggedIn(req,res, next){
         res.redirect('/');
         return false;
     }else{
-        res.locals.user = req.user;
         next();
     }
 }

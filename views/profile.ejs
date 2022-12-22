@@ -15,14 +15,16 @@
         <div class="profile-page-body p-5">
           <img
             class="profile-page-img mb-3"
-            src="/images/uploaded/profile/<%= user.profileImage %>"
+            src="/images/uploaded/profile/<%= profileUser.profileImage %>"
           />
-          <div class="d-flex justify-content-end" style="margin-top: -50px">
-            <% if(friends.includes(user.userName)){ %>
+
+          <% if(currentUser != profileUser._id){ %>
+            <div class="d-flex justify-content-end" style="margin-top: -50px">
+            <% if(friends.includes(profileUser.userName)){ %>
             <form method="post" action="/removeFriend">
               <input
                 type="hidden"
-                value="<%= user.userName %>"
+                value="<%= profileUser.userName %>"
                 name="friendId"
               />
               <button class="btn btn-primary rounded-1 mx-2">
@@ -36,7 +38,7 @@
             <form method="post" action="/addFriend">
               <input
                 type="hidden"
-                value="<%= user.userName %>"
+                value="<%= profileUser.userName %>"
                 name="friendId"
               />
               <button class="btn btn-primary rounded-1 mx-2">
@@ -47,14 +49,17 @@
               </button>
             </form>
             <%}%>
+            <%}else{%>
+            <div class="d-flex justify-content-end" style="margin-top: 10px">
+            <%}%>
           </div>
           <div class="p-2">
-            <h5 class="profile-page-name"><%= user.userName %></h5>
+            <h5 class="profile-page-name"><%= profileUser.userName %></h5>
             <p class="profile-page-location">
               <span
                 class="flag-icon flag-icon-bhr flag-icon-squared me-2"
               ></span
-              ><%= user.city %>, <%= user.country %>
+              ><%= profileUser.city %>, <%= profileUser.country %>
             </p>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum,
@@ -80,12 +85,12 @@
             <div class="timeline-item-header">
               <img
                 class="timeline-profile-icon"
-                src="/images/uploaded/profile/<%= user.profileImage %>"
+                src="/images/uploaded/profile/<%= profileUser.profileImage %>"
               />
               <div class="timeline-header">
-                <p class="timeline-profile-username"><%= user.userName %></p>
+                <p class="timeline-profile-username"><%= profileUser.userName %></p>
                 <p class="timeline-profile-location">
-                  <%- user.city %>, <%= user.country %>
+                  <%- profileUser.city %>, <%= profileUser.country %>
                 </p>
               </div>
             </div>
@@ -93,7 +98,7 @@
               class="timeline-post-img"
               src="/images/uploaded/posts/<%= post.postImage %>"
             />
-            <% if(currentUser == user._id){ %>
+            <% if(currentUser == profileUser._id){ %>
             <div class="profile-actions my-3">
               <button class="btn-delete" href="#">
                 <i class="fa-solid fa-2x">X</i>

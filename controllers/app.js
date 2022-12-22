@@ -37,7 +37,7 @@ exports.friendsFeed_show_get = async function(req,res){
         if(friendData.posts.length > 0){
             let post = await Post.findById(friendData.posts);
             posts.push({
-                    postUserId: post.postUserId,
+                    postUserId: friend,
                     postImage: post.postImage,
                     userCity: friendData.city,
                     userCountry: friendData.country,
@@ -68,7 +68,7 @@ exports.profile_show_get = async function(req,res){
         })
     }
 
-    res.render('../views/profile.ejs',{currentUser: currentUser,user: user, posts: postsTotal, friends: res.locals.user.friends});
+    res.render('../views/profile.ejs',{currentUser: currentUser, profileUser: user, posts: postsTotal, friends: res.locals.user.friends});
 }
 
 exports.settings_show_get = function(req,res){
@@ -78,15 +78,15 @@ exports.friends_list_get = function(req,res){
     res.render('../views/friends.ejs', {friends: res.locals.user.friends});
 }
 exports.profile_picture_update = async function(req, res){
-    uploadProfile(req,res, (err) =>{
-        if(err){
+    uploadProfile(req,res, (error) =>{
+        if(error){
             res.send("Something went wrong!")
         }
         User.findByIdAndUpdate(req.body.userId,{
             profileImage: req.file.filename
-        }, function (err, docs){
-            if(err){
-                console.log(err);
+        }, function (error, docs){
+            if(error){
+                console.log(error);
             }else{
                 console.log("updated user: ", docs)
             }
@@ -113,21 +113,33 @@ exports.remove_friend_post = async function(req,res){
         res.redirect(`/profile/${friendId}`);
     })
 }
-exports.password_change_post = async function(req,res){
-    let password = bcrypt.hashSync(req.body.password, 10)
-    req.body.password = password;
+exports.profile_change_post = async function(req,res, next){
+    let passwordChanged = false;
+    if(req.body.password === req.body.passwordRepeat && req.body.password !== ""){
+        let password = bcrypt.hashSync(req.body.password, 10)
+        req.body.password = password;
+        passwordChanged = true;
+    }
+
     let updateInfo = req.body;
     for(let field in updateInfo){
         if(updateInfo[field] == ""){
             updateInfo[field] = res.locals[field]
         }
     }
-    console.log(updateInfo);
-    User.findByIdAndUpdate(res.locals.user._id,updateInfo, (err) =>{
-        if(err){
-            console.log(err)
+
+    User.findByIdAndUpdate(res.locals.user._id,updateInfo, (error) =>{
+        if(error){
+            console.log(error)
         }else{
-            redirect('/settings')
+            if(passwordChanged){
+                req.logout(function(error){
+                    return next (error);
+                })
+                res.redirect("/");
+            }else{
+                res.redirect("/settings");
+            }
         }
     })
 }
@@ -144,7 +156,6 @@ exports.newPost_post = async function(req,res){
         post.amountLikes, post.amountDislikes = 0;
         post.postUserId = res.locals.user.userName;
         post.postImage = req.file.filename;
-        //CHECK CODE LATER
         post.postLocation = `${res.locals.user.city}, ${res.locals.user.country}`;
         post.save()
         .then(() =>{
@@ -156,8 +167,8 @@ exports.newPost_post = async function(req,res){
         currentUser.posts.push(post._id);
         currentUser.save()
         .then()
-        .catch((err) =>{
-            console.log(err);
+        .catch((error) =>{
+            console.log(error);
         })
     });
 }
